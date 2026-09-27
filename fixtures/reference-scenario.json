@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "kind": "reference-only-not-deployed",
+  "chainId": 31337,
+  "token": {
+    "name": "DemoUSD",
+    "decimals": 6,
+    "hasMonetaryValue": false
+  },
+  "signerLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+  ],
+  "positions": [
+    {
+      "id": "atlas",
+      "amountRaw": "40000000000",
+      "threshold": 2,
+      "ownersBefore": [
+        "A",
+        "B",
+        "C"
+      ],
+      "ownersAfter": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "id": "harbor",
+      "amountRaw": "35000000000",
+      "threshold": 2,
+      "ownersBefore": [
+        "A",
+        "B",
+        "D"
+      ],
+      "ownersAfter": [
+        "C",
+        "D",
+        "F"
+      ]
+    },
+    {
+      "id": "grove",
+      "amountRaw": "25000000000",
+      "threshold": 2,
+      "ownersBefore": [
+        "A",
+        "B",
+        "E"
+      ],
+      "ownersAfter": [
+        "A",
+        "B",
+        "E"
+      ]
+    }
+  ],
+  "action": "pauseWithdrawals",
+  "expected": {
+    "before": {
+      "minimumKeysForAll": 2,
+      "maxExposureRawByKeyBudget": {
+        "1": "0",
+        "2": "100000000000"
+      }
+    },
+    "after": {
+      "minimumKeysForAll": 4,
+      "maxExposureRawByKeyBudget": {
+        "1": "0",
+        "2": "65000000000",
+        "3": "75000000000",
+        "4": "100000000000"
+      }
+    }
+  },
+  "note": "Only complete for the defined known Safe/EOA profile without alternative control paths. Labels must be resolved to actual local accounts during deployment. No real addresses or private keys included."
+}

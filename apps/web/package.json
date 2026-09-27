@@ -1,0 +1,25 @@
+{
+  "name": "@breakpoint/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@breakpoint/core": "0.1.0",
+    "@breakpoint/scenario": "0.1.0",
+    "@xyflow/react": "12.11.6",
+    "ethers": "6.17.0",
+    "next": "16.3.5",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@next/swc-win32-x64-msvc": "16.3.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0"
+  }
+}
